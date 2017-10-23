@@ -1,0 +1,39 @@
+// 1.0 注释 这种注释不会被编译保留
+/* 1.1 这种注释会被编译保留*/
+
+// 2.0 定义变量
+$mainColor: #e92322;
+$w: 200px;
+$h: 200px;
+$size:24px;
+
+// 2.1 调用变量
+#partner{
+    .container{
+        text-align: center;
+        >h3{
+           font-size: $size;            
+        }
+        >ul{
+            list-style: none;
+            >li{
+               float: left;
+               width: calc(100%/9);
+               border-left: 1px dashed #ccc;
+               &:first-of-type{
+                   border-left: 0;
+               }              
+               >a {
+                   color: #ccc;   
+                   text-decoration: none;         
+                   >i::before{
+                       font-size: 50px;
+                   }
+                   &:hover{                  
+                    color: $mainColor;                                         
+                    }     
+                }
+            }
+        }
+    }
+}
